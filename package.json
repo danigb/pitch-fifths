@@ -1,0 +1,33 @@
+{
+  "name": "a-pitch-fifths",
+  "version": "0.1.0",
+  "description": "Music pitches and intervals expressed in fifths",
+  "main": "index.js",
+  "scripts": {
+    "test": "vows --spec test/*.js",
+    "docs": "docme README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danigb/a-pitch-fifths.git"
+  },
+  "keywords": [
+    "pitch",
+    "interval",
+    "fifths",
+    "music",
+    "theory"
+  ],
+  "author": "danigb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danigb/a-pitch-fifths/issues"
+  },
+  "homepage": "https://github.com/danigb/a-pitch-fifths#readme",
+  "dependencies": {
+    "vows": "^0.8.1"
+  },
+  "devDependencies": {
+    "interval-parser": "^0.9.0"
+  }
+}
