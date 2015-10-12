@@ -1,15 +1,16 @@
-# a-pitch-fifths
+# pitch-fifths
 
-Pitches and intervals expressed in fifths:
+Pitches and intervals expressed in fifths and octaves:
 
 ```js
-var fifths = require('a-pitch-fifths')
+var fifths = require('pitch-fifths')
 fifths([1, 0, 0]) // => [2, -1]
+fifths.toPitch([2, -1]) // => [1, 0, 0]
 ```
 
-This is a low level library. Probably you want to use [tonal](https://github.com/danigb/tonal)
+This library converts from [a-pitch](https://github.com/danigb/a-pitch) arrays to a `[fifths, octaves]` array. This representation of pitches (or intervals) are useful to do [interval arithmetic](https://github.com/danigb/pitch-op).
 
-If you don't know what are those arrays, see [a-pitch](https://github.com/danigb/a-pitch)
+This is a low level library. Probably you want to use [tonal](https://github.com/danigb/tonal)
 
 ## API
 
@@ -61,9 +62,9 @@ or keys</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/a-pitch-fifths/blob/master/index.js">index.js</a>
+<a href="https://github.com/danigb/pitch-fifths/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/a-pitch-fifths/blob/master/index.js#L27">lineno 27</a>
+<a href="https://github.com/danigb/pitch-fifths/blob/master/index.js#L27">lineno 27</a>
 </li>
 </ul></dd>
 </dl>
@@ -80,13 +81,13 @@ Type
 </dd>
 </dl>
 <h5>Example</h5>
-<pre class="prettyprint"><code>var fifths = require('a-pitch-fifths')
+<pre class="prettyprint"><code>var fifths = require('pitch-fifths')
 fifths([0, 0, 0]) // => [0, 0]
 fifths([0, 0, 1]) // => [0, 1]
 fifths([1, 0, 0]) // => [2, -1]</code></pre>
 </dd>
 <dt>
-<h4 class="name" id="toAPitch"><span class="type-signature"></span>toAPitch<span class="signature">(coord)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+<h4 class="name" id="toPitch"><span class="type-signature"></span>toPitch<span class="signature">(coord)</span><span class="type-signature"> &rarr; {Array}</span></h4>
 </dt>
 <dd>
 <div class="description">
@@ -116,9 +117,9 @@ fifths array</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/a-pitch-fifths/blob/master/index.js">index.js</a>
+<a href="https://github.com/danigb/pitch-fifths/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/a-pitch-fifths/blob/master/index.js#L45">lineno 45</a>
+<a href="https://github.com/danigb/pitch-fifths/blob/master/index.js#L45">lineno 45</a>
 </li>
 </ul></dd>
 </dl>
@@ -135,8 +136,8 @@ Type
 </dd>
 </dl>
 <h5>Example</h5>
-<pre class="prettyprint"><code>var fifths = require('a-pitch-fifths')
-fifths.toAPitch([3, -1]) // => [6, 0, 1]</code></pre>
+<pre class="prettyprint"><code>var fifths = require('pitch-fifths')
+fifths.toPitch([3, -1]) // => [6, 0, 1]</code></pre>
 </dd>
 </dl>
 </article>

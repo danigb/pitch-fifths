@@ -19,7 +19,7 @@ var BASE_FROM = [ [0, 0], [4, 0], [1, 1], [5, 1], [2, 2], [6, 2], [3, -1] ]
  * @return {Array} an array with the form [fifths, octaves] where both are integers
  *
  * @example
- * var fifths = require('a-pitch-fifths')
+ * var fifths = require('pitch-fifths')
  * fifths([0, 0, 0]) // => [0, 0]
  * fifths([0, 0, 1]) // => [0, 1]
  * fifths([1, 0, 0]) // => [2, -1]
@@ -39,18 +39,18 @@ function fifths (t) {
  * @return {Array} the a-pitch structure
  *
  * @example
- * var fifths = require('a-pitch-fifths')
- * fifths.toAPitch([3, -1]) // => [6, 0, 1]
+ * var fifths = require('pitch-fifths')
+ * fifths.toPitch([3, -1]) // => [6, 0, 1]
  */
-function toAPitch (coord) {
+function toPitch (coord) {
   var q = coord[0] % 7
   var index = q < 0 ? 7 - Math.abs(q) : q
   var alter = Math.floor((coord[0] + 1) / 7)
 
   var base = BASE_FROM[index]
-  var oct = coord[1] || coord[1] === 0 ? base[1] + alter * 4 + coord[1] : null
+  var oct = coord[1] === null ? null : base[1] + alter * 4 + coord[1]
   return [base[0], alter, oct]
 }
 
-fifths.toAPitch = toAPitch
+fifths.toPitch = toPitch
 module.exports = fifths

@@ -1,5 +1,5 @@
 {
-  "name": "a-pitch-fifths",
+  "name": "pitch-fifths",
   "version": "0.1.0",
   "description": "Music pitches and intervals expressed in fifths",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danigb/a-pitch-fifths.git"
+    "url": "git+https://github.com/danigb/pitch-fifths.git"
   },
   "keywords": [
     "pitch",
@@ -21,9 +21,9 @@
   "author": "danigb",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danigb/a-pitch-fifths/issues"
+    "url": "https://github.com/danigb/pitch-fifths/issues"
   },
-  "homepage": "https://github.com/danigb/a-pitch-fifths#readme",
+  "homepage": "https://github.com/danigb/pitch-fifths#readme",
   "dependencies": {
     "vows": "^0.8.1"
   },

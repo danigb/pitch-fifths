@@ -5,10 +5,10 @@ var interval = require('interval-parser')
 
 function t (intervals) {
   return intervals.split(' ').map(interval.parse).map(fifths)
-    .map(fifths.toAPitch).map(interval.stringify).join(' ')
+    .map(fifths.toPitch).map(interval.stringify).join(' ')
 }
 
-vows.describe('a-pitch-fifths').addBatch({
+vows.describe('pitch-fifths').addBatch({
   'fifths': {
     'from array to fifths': function () {
       assert.deepEqual(fifths([1, 0, 0]), [2, -1])
@@ -38,29 +38,29 @@ vows.describe('a-pitch-fifths').addBatch({
       assert.deepEqual(fifths(interval('-5P')), [-1, 0])
     }
   },
-  'fifths.toAPitch': {
+  'fifths.toPitch': {
     'convert back to a-pitch': function () {
-      assert.deepEqual(fifths.toAPitch([0, 0]), [0, 0, 0])
-      assert.deepEqual(fifths.toAPitch([7, 0]), [0, 1, 4])
-      assert.deepEqual(fifths.toAPitch([1, 0]), [4, 0, 0])
-      assert.deepEqual(fifths.toAPitch([2, 0]), [1, 0, 1])
-      assert.deepEqual(fifths.toAPitch([2, -1]), [1, 0, 0])
-      assert.deepEqual(fifths.toAPitch([0, 1]), [0, 0, 1])
-      assert.deepEqual(fifths.toAPitch([7, -4]), [0, 1, 0])
-      assert.deepEqual(fifths.toAPitch([14, -8]), [0, 2, 0])
-      assert.deepEqual(fifths.toAPitch([14, -7]), [0, 2, 1])
-      assert.deepEqual(fifths.toAPitch([-1, 0]), [3, 0, -1])
-      assert.deepEqual(fifths.toAPitch([-2, 1]), [6, -1, -1])
-      assert.deepEqual(fifths.toAPitch([-3, 0]), [2, -1, -2])
-      assert.deepEqual(fifths.toAPitch([-7, 0]), [0, -1, -4])
-      assert.deepEqual(fifths.toAPitch([-8, 0]), [3, -1, -5])
-      assert.deepEqual(fifths.toAPitch([-9, 0]), [6, -2, -6])
+      assert.deepEqual(fifths.toPitch([0, 0]), [0, 0, 0])
+      assert.deepEqual(fifths.toPitch([7, 0]), [0, 1, 4])
+      assert.deepEqual(fifths.toPitch([1, 0]), [4, 0, 0])
+      assert.deepEqual(fifths.toPitch([2, 0]), [1, 0, 1])
+      assert.deepEqual(fifths.toPitch([2, -1]), [1, 0, 0])
+      assert.deepEqual(fifths.toPitch([0, 1]), [0, 0, 1])
+      assert.deepEqual(fifths.toPitch([7, -4]), [0, 1, 0])
+      assert.deepEqual(fifths.toPitch([14, -8]), [0, 2, 0])
+      assert.deepEqual(fifths.toPitch([14, -7]), [0, 2, 1])
+      assert.deepEqual(fifths.toPitch([-1, 0]), [3, 0, -1])
+      assert.deepEqual(fifths.toPitch([-2, 1]), [6, -1, -1])
+      assert.deepEqual(fifths.toPitch([-3, 0]), [2, -1, -2])
+      assert.deepEqual(fifths.toPitch([-7, 0]), [0, -1, -4])
+      assert.deepEqual(fifths.toPitch([-8, 0]), [3, -1, -5])
+      assert.deepEqual(fifths.toPitch([-9, 0]), [6, -2, -6])
     },
     'without octaves': function () {
-      assert.deepEqual(fifths.toAPitch([2, null]), [1, 0, null])
-      assert.deepEqual(fifths.toAPitch([-9, null]), [6, -2, null])
-      assert.deepEqual(fifths.toAPitch([-1, null]), [3, 0, null])
-      assert.deepEqual(fifths.toAPitch([-8, null]), [3, -1, null])
+      assert.deepEqual(fifths.toPitch([2, null]), [1, 0, null])
+      assert.deepEqual(fifths.toPitch([-9, null]), [6, -2, null])
+      assert.deepEqual(fifths.toPitch([-1, null]), [3, 0, null])
+      assert.deepEqual(fifths.toPitch([-8, null]), [3, -1, null])
     },
     'intervals to fifths and back to intervals': function () {
       assert.deepEqual(t('1P 2M 3M 4P 5P 6M 7M'), '1P 2M 3M 4P 5P 6M 7M')
